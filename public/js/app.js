@@ -8,16 +8,20 @@ $(document).ready(function() {
   $breakBtn.on('click',startBreak);
 
     function startBreak(){
-      alert('break button works');
+      $minutes.text('05');
+      $seconds.text('00');
+      startCountdown();
     }
 
   function startCountdown(){
-    setInterval(function(){
+  var countdown =  setInterval(function(){
       var secondsVal = +$seconds.text();
       var minutesVal = +$minutes.text();
         if(secondsVal === 0 && minutesVal === 0){
           $breakBtn.removeClass('disabled');
           $breakBtn.removeAttr('disabled');
+          clearInterval(countdown);
+          return;
         }
       // plus sign makes it behave like a number
         if(secondsVal === 0) {
