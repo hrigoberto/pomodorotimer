@@ -5,6 +5,11 @@ $(document).ready(function() {
   var $breakBtn = $('#break');
 
   $start.on('click',startCountdown);
+  $breakBtn.on('click',startBreak);
+
+    function startBreak(){
+      alert('break button works');
+    }
 
   function startCountdown(){
     setInterval(function(){
@@ -28,8 +33,5 @@ $(document).ready(function() {
     }, 1000);
   }
 
-  $breakBtn.on('click',startBreak);
-    function startBreak(){
-      alert('break button works');
-    }
+
 });
